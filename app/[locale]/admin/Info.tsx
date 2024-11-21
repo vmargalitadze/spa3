@@ -20,10 +20,10 @@ async function Info() {
             <TableCell><p className="whitespace-nowrap">{phoneNumber}</p></TableCell>
             <TableCell><p className="whitespace-nowrap">{time}</p></TableCell>
             <TableCell>
-    <p className="whitespace-nowrap">
-      {date instanceof Date ? date.toLocaleDateString() : date}
-    </p>
-  </TableCell>
+  <p className="whitespace-nowrap">
+    {new Date(date).toISOString().split('T')[0]}
+  </p>
+</TableCell>
 
             <TableCell><DeleteBooking bookingId={id} /></TableCell>
           </TableRow>
