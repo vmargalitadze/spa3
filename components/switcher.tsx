@@ -16,18 +16,15 @@ export default function LocalSwitcher() {
     });
   };
   return (
-    <label className='border-2 rounded'>
-      <p className='sr-only'>change language</p>
-      <select
-        defaultValue={localActive}
-        className='bg-transparent py-2'
-        onChange={onSelectChange}
-        disabled={isPending}
-      >
-        <option value='en'>English</option>
-        <option value='ge'>Georgia</option>
-        <option value='ru'>Russian</option>
-      </select>
-    </label>
+    <div className="language-selector__container">
+    <label>
+     <select   defaultValue={localActive} onChange={onSelectChange} disabled={isPending} className="js_language_selector ">
+       <option value='ge'>Ka</option>
+       <option value='en'>En</option>
+       <option value='ru'>Ru</option>
+     </select>
+   </label>
+ </div>
+
   );
 }

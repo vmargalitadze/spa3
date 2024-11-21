@@ -14,9 +14,7 @@ function Link2() {
         >
           {t('mess')}
         </Link>
-        <div className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900">
-          <LocalSwitcher />
-        </div>
+       
        
         <Link
           aria-current="page"
@@ -45,7 +43,11 @@ function Link2() {
         >
          {t('nav6')}
         </Link>
+
       </div>
+      <div className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900">
+          <LocalSwitcher />
+        </div>
    </>
   )
 }
