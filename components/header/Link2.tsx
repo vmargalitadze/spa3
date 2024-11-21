@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 import LocalSwitcher from '../switcher'
-
+import { useTranslations } from 'next-intl';
 function Link2() {
+  const t = useTranslations('HomePage');
   return (
    <>
       <div className="md:hidden mt-3 space-y-2">
@@ -11,7 +12,7 @@ function Link2() {
           className="block w-full rounded-lg px-3 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
           href="/"
         >
-          Home
+          {t('mess')}
         </Link>
         <div className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900">
           <LocalSwitcher />
@@ -22,27 +23,27 @@ function Link2() {
           className="block w-full rounded-lg px-3 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
            href="#team"
         >
-          Team
+          {t('nav4')}
         </Link>
         <Link
           aria-current="page"
           className="block w-full rounded-lg px-3 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
           href="#serv"
         >
-          Services
+          {t('serv')}
         </Link>
         <Link
           aria-current="page"
           className="block w-full rounded-lg px-3 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
           href="#gallery"
         >
-          Gallery
+          {t('nav5')}
         </Link>
         <Link
           className="block w-full rounded-lg px-3 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
           href="#contact"
         >
-         Contacts
+         {t('nav6')}
         </Link>
       </div>
    </>
