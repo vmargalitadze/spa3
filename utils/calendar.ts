@@ -13,20 +13,21 @@ export const generateBlockedPeriods = ({
   bookings: Booking[];
   today: Date;
 }) => {
-  today.setHours(0, 0, 0, 0); // Set the time to 00:00:00.000
+  today.setHours(0, 0, 0, 0); 
 
   const disabledDays: DateRange[] = [
     ...bookings.map((booking) => ({
-      from: booking.date,
-      to: booking.date,
+      from: new Date(booking.date), 
+      to: new Date(booking.date),   
     })),
     {
-      from: new Date(0), // This is 01 January 1970 00:00:00 UTC.
-      to: new Date(today.getTime() - 24 * 60 * 60 * 1000), // This is yesterday.
+      from: new Date(0), 
+      to: new Date(today.getTime() - 24 * 60 * 60 * 1000), 
     },
   ];
   return disabledDays;
 };
+
 
 export const generateDateRange = (range: DateRange | undefined): string[] => {
   if (!range || !range.from || !range.to) return [];
@@ -51,7 +52,7 @@ export const generateDisabledDates = (
 
   const disabledDates: { [key: string]: boolean } = {};
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // set time to 00:00:00 to compare only the date part
+  today.setHours(0, 0, 0, 0); 
 
   disabledDays.forEach((range) => {
     if (!range.from || !range.to) return;
@@ -80,10 +81,10 @@ export function calculateDaysBetween({
   checkIn: Date;
   checkOut: Date;
 }) {
-  // Calculate the difference in milliseconds
+ 
   const diffInMs = Math.abs(checkOut.getTime() - checkIn.getTime());
 
-  // Convert the difference in milliseconds to days
+  
   const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
 
   return diffInDays;
