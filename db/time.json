@@ -1,0 +1,21 @@
+{
+    "time": [
+        { "id": "10-am", "label": "10:00 AM", "booked": "0" },
+        { "id": "10-30-am", "label": "10:30 AM", "booked": "0"  },
+        { "id": "11-am", "label": "11:00 AM", "booked": "0"  },
+        { "id": "11-30-am", "label": "11:30 AM", "booked": "0"  },
+        { "id": "12-am", "label": "12:00 AM", "booked": "0"  },
+        { "id": "12-30-am", "label": "12:30 AM", "booked": "0"  },
+        { "id": "1-pm", "label": "01:00 PM", "booked": "0"  },
+        { "id": "1-30-pm", "label": "01:30 PM", "booked": "0"  },
+        { "id": "2-pm", "label": "02:00 PM", "booked":"0"  },
+        { "id": "2-30-pm", "label": "02:30 PM", "booked": "0"  },
+        { "id": "3-pm", "label": "03:00 PM", "booked": "0"  },
+        { "id": "3-30-pm", "label": "03:30 PM", "booked": "0"  },
+        { "id": "4-pm", "label": "04:00 PM", "booked": "0"  },
+        { "id": "4-30-pm", "label": "04:30 PM", "booked": "0"  },
+        { "id": "5-pm", "label": "05:00 PM", "booked": "0"  },
+        { "id": "5-30-pm", "label": "05:30 PM", "booked": "0"  },
+        { "id": "6-pm", "label": "06:00 PM", "booked": "0"  }
+      ]
+  }

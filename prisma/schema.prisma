@@ -1,0 +1,26 @@
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  directUrl         = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Booking {
+  id         String @id @default(uuid())
+  firstName  String
+  lastName   String
+  email      String
+  phoneNumber String
+  time        String
+  date   DateTime
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String @unique
+  email    String @unique
+  password String 
+}
