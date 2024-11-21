@@ -6,6 +6,6 @@ export type Booking = {
   lastName: string;
   email: string;
   phoneNumber: string;
-  date: Date;
- 
+  date: string;
+  time:string
 };

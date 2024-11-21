@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { Calendar } from '@/components/ui/calendar';
 import { useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
@@ -25,17 +26,18 @@ function BookingCalendar(props: FormInputProps) {
         description: 'This date is unavailable. Please select a different date.',
       });
     } else {
-      useProperty.setState({ date: selectedDate });
+      // Set the selected date in ISO string format to Zustand store
+      useProperty.setState({ date: selectedDate?.toISOString() || '' });
     }
   }, [selectedDate]);
 
   return (
     <div className="calendar-wrapper">
-      {/* Pass the name as a hidden input for form submission */}
+      {/* Hidden input to hold the selected date value */}
       <input type="hidden" name={name} value={selectedDate?.toISOString() || ''} />
 
       <Calendar
-        mode="single" // Single date selection
+        mode="single"
         defaultMonth={currentDate}
         selected={selectedDate}
         onSelect={setSelectedDate}

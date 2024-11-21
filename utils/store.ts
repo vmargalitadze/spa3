@@ -3,10 +3,10 @@ import { Booking } from './types';
 
 type InfoState = {
   bookings: Booking[];
-  date: Date | null; // Default to null, since there's no initial date selected
+  date: string | undefined; // Updated type to string
 };
 
 export const useProperty = create<InfoState>((set) => ({
   bookings: [],
-  date: null,
+  date: undefined,
 }));

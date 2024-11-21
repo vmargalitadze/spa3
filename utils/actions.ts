@@ -21,44 +21,17 @@ export const createBookingAction = async (
 ): Promise<{ message: string }> => {
   try {
     const rawData = Object.fromEntries(formData);
-    console.log("Raw Data:", rawData); // Log raw data for debugging
 
-    const ddate = rawData.date as string | undefined;
-    if (!ddate) {
-      throw new Error("Date is required but not provided.");
-    }
+    const validatedFields = validateWithZod(bookingeSchema, rawData);
 
-    // Parse the date and ensure it's valid
-    const parsedDate = new Date(ddate);
-    if (isNaN(parsedDate.getTime())) {
-      throw new Error("Invalid date format.");
-    }
-
-    const parsedData = {
-      ...rawData,
-      date: parsedDate, // Set the valid parsed date
-    };
-
-
-    // Validate the parsed data with Zod schema
-    const validatedFields = validateWithZod(bookingeSchema, parsedData);
-
-
-    if (!validatedFields) {
-      throw new Error("Validation failed. No valid data.");
-    }
-
-    // Insert the validated data into the database
     await db.booking.create({
       data: validatedFields,
     });
 
-    return { message: "We will call you soon" };
-    
-    
+   
+    return { message: "მალე დაგიკავშირდებით" };
   } catch (error) {
-    console.error("Error in createBookingAction:", error);
-    return renderError(error); 
+    return renderError(error);
   }
 };
 

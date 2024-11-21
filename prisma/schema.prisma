@@ -15,7 +15,7 @@ model Booking {
   email      String
   phoneNumber String
   time        String
-  date   DateTime
+  date   String
 }
 
 model User {

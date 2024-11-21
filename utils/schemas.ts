@@ -14,7 +14,7 @@ export const bookingeSchema = z.object({
   phoneNumber: z.string().min(9, {
     message: 'Phone number must be at least 9 characters',
   }),
-  date: z.date({
+  date: z.string({
     invalid_type_error: 'Invalid date',
     required_error: 'Date is required',
   }),
