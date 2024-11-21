@@ -13,7 +13,6 @@ export const fetchBooking = async () => {
   date.setMonth(date.getMonth() - 6);
 
   try {
-    console.log("Fetching bookings...");
     const bookings = await db.booking.findMany({
       select: {
         id: true,
@@ -25,7 +24,8 @@ export const fetchBooking = async () => {
         time:true
       },
     });
-   
+    
+    
     return bookings;
   } catch (error) {
     console.error("Error fetching bookings:", error);

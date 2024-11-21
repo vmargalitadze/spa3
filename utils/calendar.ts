@@ -37,7 +37,11 @@ export const generateDateRange = (range: DateRange | undefined): string[] => {
   const dateRange: string[] = [];
 
   while (currentDate <= endDate) {
-    const dateString = currentDate.toISOString().split('T')[0];
+    const dateString = new Date(
+      currentDate.getTime() - currentDate.getTimezoneOffset() * 60000
+    )
+      .toISOString()
+      .split('T')[0];
     dateRange.push(dateString);
     currentDate.setDate(currentDate.getDate() + 1);
   }
@@ -52,7 +56,7 @@ export const generateDisabledDates = (
 
   const disabledDates: { [key: string]: boolean } = {};
   const today = new Date();
-  today.setHours(0, 0, 0, 0); 
+  today.setHours(0, 0, 0, 0);
 
   disabledDays.forEach((range) => {
     if (!range.from || !range.to) return;
@@ -81,10 +85,10 @@ export function calculateDaysBetween({
   checkIn: Date;
   checkOut: Date;
 }) {
- 
+  // Calculate the difference in milliseconds
   const diffInMs = Math.abs(checkOut.getTime() - checkIn.getTime());
 
-  
+  // Convert the difference in milliseconds to days
   const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
 
   return diffInDays;

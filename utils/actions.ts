@@ -27,6 +27,7 @@ export const createBookingAction = async (
     await db.booking.create({
       data: validatedFields,
     });
+console.log(rawData);
 
    
     return { message: "მალე დაგიკავშირდებით" };

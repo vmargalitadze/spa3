@@ -3,7 +3,7 @@ import { Booking } from './types';
 
 type InfoState = {
   bookings: Booking[];
-  date: string | undefined; // Updated type to string
+  date: string | undefined; 
 };
 
 export const useProperty = create<InfoState>((set) => ({
