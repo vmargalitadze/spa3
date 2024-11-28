@@ -21,7 +21,7 @@ async function Info() {
             <TableCell><p className="whitespace-nowrap">{time}</p></TableCell>
             <TableCell>
   <p className="whitespace-nowrap">
-    {new Date(date).toISOString().split('T')[0]}
+    {time}
   </p>
 </TableCell>
 
