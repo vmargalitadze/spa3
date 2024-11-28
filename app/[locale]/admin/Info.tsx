@@ -21,7 +21,7 @@ async function Info() {
             <TableCell><p className="whitespace-nowrap">{time}</p></TableCell>
             <TableCell>
   <p className="whitespace-nowrap">
-    {time}
+    {date.split('T')[0]}
   </p>
 </TableCell>
 
